@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PubSub patterns</title>
+        <link rel="stylesheet" type="text/css" href="./css/main.css">
+    </head>
+<body>
+    <div class="stats">
+        <h2>Stats</h2>
+        <h4 id="statsModule">
+            <script id="stats-template" type="text/template">
+                People <span>{{people}}</span>
+            </script>
+        </h4>
+    </div>
+    <div id="peopleModule">
+        <h1>People</h1>
+        <input placeholder="name" type="text">
+        <button id="addPerson">Add Person</button>
+        <ul id="people">
+            <script id="people-template" type="text/template">
+                {{#people}}
+                    <li>
+                        <span>{{.}}</span>
+                        <i class="del">X</i>
+                    </li>
+                {{/people}}
+            </script>
+        </ul>
+    </div>
+    <script src='./bower_components/jquery/dist/jquery.min.js'></script>
+    <script src='./bower_components/mustache.js/mustache.min.js'></script>
+    <script src='./js/pubsub.js'></script>
+    <script src='./js/stats.js'></script>
+    <script src='./js/people.js'></script>
+</body>
+</html>
